@@ -26,6 +26,7 @@
 
 // WHEN I refresh the page
 // THEN the saved events persist
+var saveButton = document.querySelector(".saveBtn")
 var timeColor = document.querySelectorAll(".custom-timeColor")
 console.log(timeColor);
 var timeBlocks = document.querySelectorAll(".time-block")
@@ -58,4 +59,20 @@ function updateCurrentHour() {
 updateCurrentHour()
 
 
-
+renderLastSaved();
+function renderLastRegistered() {
+    var text9 = localStorage.getItem("list");
+    console.log(text9);
+      
+  }
+  
+  saveButton.addEventListener("click", function(event) {
+    event.preventDefault();
+  
+    var text9 = document.querySelector("#nine").value;
+    
+        localStorage.setItem("list", text9);
+      
+      renderLastRegistered();
+    
+    })
